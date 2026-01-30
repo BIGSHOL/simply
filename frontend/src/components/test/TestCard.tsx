@@ -47,7 +47,7 @@ export default function TestCard({ test, compact = false }: TestCardProps) {
         <div className="bg-white border border-[#E5E7EB] rounded-xl p-4 hover:border-[#6366F1] hover:shadow-sm transition-all cursor-pointer">
           <div className="flex items-center justify-between">
             <div className="flex-1 min-w-0">
-              <h4 className="text-base font-medium text-[#111827] truncate">
+              <h4 className="text-base font-medium text-[#111827] line-clamp-2">
                 {test.title}
               </h4>
               <div className="flex items-center gap-2 mt-1">

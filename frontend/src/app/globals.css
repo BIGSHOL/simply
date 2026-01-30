@@ -62,6 +62,19 @@ body {
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* 한국어 줄바꿈: 단어 단위로 끊기 + 긴 단어 강제 줄바꿈 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 제목 줄바꿈: 여러 줄일 때 균형 있게 분배 */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+/* 본문 줄바꿈: 마지막 줄 외톨이 단어 방지 */
+p, li {
+  text-wrap: pretty;
 }
 
 /* 유틸리티 클래스 */
