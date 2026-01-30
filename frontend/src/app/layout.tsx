@@ -9,17 +9,25 @@ import Script from 'next/script';
 import { Header, Footer } from '@/components/Layout';
 import './globals.css';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://simly-tau.vercel.app';
+
 export const metadata: Metadata = {
-  title: 'Simly - AI 심리테스트',
-  description: 'AI가 만들어주는 나만의 심리테스트 결과',
-  keywords: ['심리테스트', 'AI', 'MBTI', '성격테스트', '연애테스트'],
-  icons: {
-    icon: '/favicon.png',
-  },
+  metadataBase: new URL(siteUrl),
+  title: '내 안의 진짜 나를 찾아보세요 | Simly',
+  description: '10개 질문이면 충분해요. AI가 당신의 성격, 연애 스타일, 숨겨진 본능까지 분석해드립니다. 친구들도 놀란 정확도!',
+  keywords: ['심리테스트', 'AI', 'MBTI', '성격테스트', '연애테스트', '직장테스트', '심리분석'],
   openGraph: {
-    title: 'Simly - AI 심리테스트',
-    description: 'AI가 만들어주는 나만의 심리테스트 결과',
+    title: '🧠 10개 질문으로 알아보는 진짜 내 모습',
+    description: 'AI가 분석하는 성격, 연애, 직장, 재미 심리테스트. 친구들이 놀란 그 정확도, 직접 확인해보세요!',
     type: 'website',
+    siteName: 'Simly',
+    url: siteUrl,
+    locale: 'ko_KR',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '🧠 10개 질문으로 알아보는 진짜 내 모습',
+    description: 'AI가 분석하는 성격, 연애, 직장, 재미 심리테스트. 친구들이 놀란 그 정확도!',
   },
 };
 
