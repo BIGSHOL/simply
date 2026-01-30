@@ -4,6 +4,7 @@
 Phase 1, T1.3: 테스트 목록 API
 Phase 2, T2.3: 점수 기반 결과 생성
 """
+import random
 from uuid import UUID
 from typing import Optional
 from fastapi import APIRouter, Depends, HTTPException, Query
@@ -65,7 +66,9 @@ def get_test_detail(
             },
         )
 
-    return TestDetailApiResponse(data=TestDetailResponse.model_validate(test))
+    detail = TestDetailResponse.model_validate(test)
+    random.shuffle(detail.questions)
+    return TestDetailApiResponse(data=detail)
 
 
 @router.post("/{test_id}/like")
