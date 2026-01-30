@@ -14,6 +14,7 @@ export const mockTestSummaries: TestSummary[] = [
     category: 'love',
     question_count: 10,
     play_count: 12345,
+    like_count: 1234,
   },
   {
     id: 'test-2',
@@ -23,6 +24,7 @@ export const mockTestSummaries: TestSummary[] = [
     category: 'career',
     question_count: 8,
     play_count: 8765,
+    like_count: 876,
   },
   {
     id: 'test-3',
@@ -32,6 +34,7 @@ export const mockTestSummaries: TestSummary[] = [
     category: 'personality',
     question_count: 12,
     play_count: 5432,
+    like_count: 543,
   },
   {
     id: 'test-4',
@@ -41,6 +44,7 @@ export const mockTestSummaries: TestSummary[] = [
     category: 'fun',
     question_count: 5,
     play_count: 3210,
+    like_count: 321,
   },
 ];
 
@@ -52,6 +56,7 @@ export const mockTestDetail: Test = {
   category: 'love',
   question_count: 3,
   play_count: 12345,
+  like_count: 1234,
   questions: [
     {
       id: 'q-1',
