@@ -40,6 +40,7 @@ def seed_workplace_test():
             description="동료들이 뒤에서 부르는 당신의 별명은? MZ 직장인 16가지 유형 총정리 🔥",
             category="career",
             play_count=87650,
+            like_count=7230,
         )
         db.add(test)
         db.flush()

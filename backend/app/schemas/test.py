@@ -37,6 +37,7 @@ class TestSummaryResponse(BaseModel):
     category: str
     question_count: int
     play_count: int
+    like_count: int = 0
 
     model_config = {"from_attributes": True}
 
@@ -50,6 +51,7 @@ class TestDetailResponse(BaseModel):
     category: str
     question_count: int
     play_count: int
+    like_count: int = 0
     questions: list[QuestionResponse] = []
 
     model_config = {"from_attributes": True}

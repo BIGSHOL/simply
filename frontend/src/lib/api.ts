@@ -37,6 +37,13 @@ export async function submitTest(id: string, answers: Answer[]): Promise<ApiResp
   });
 }
 
+// 테스트 좋아요
+export async function likeTest(id: string): Promise<{ data: { like_count: number } }> {
+  return fetchApi(`/tests/${id}/like`, {
+    method: 'POST',
+  });
+}
+
 // 결과 조회
 export async function getResult(id: string): Promise<ApiResponse<Result>> {
   return fetchApi(`/results/${id}`);

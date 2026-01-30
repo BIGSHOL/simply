@@ -37,7 +37,8 @@ def seed_love_test():
             title="나의 연애 유형은?",
             description="20개의 질문으로 알아보는 나의 연애 스타일. 5가지 차원(적극성, 감정표현, 독립성, 헌신도, 로맨스)을 분석하여 20가지 유형 중 당신의 연애 패턴을 찾아드려요!",
             category="love",
-            play_count=0,
+            play_count=24560,
+            like_count=1980,
         )
         db.add(test)
         db.flush()

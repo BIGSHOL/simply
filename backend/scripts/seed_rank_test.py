@@ -39,6 +39,7 @@ def seed_rank_test():
             description="직급은 사원인데 마음은 이미 회장님... 월급은 안 오르는데 책임감만 오르는 당신! 점심시간에 몰래 확인하는 나의 진짜 직장 계급 💼 (사수한테 안 들킴 주의)",
             category="career",
             play_count=7892,
+            like_count=620,
         )
         db.add(test)
         db.flush()

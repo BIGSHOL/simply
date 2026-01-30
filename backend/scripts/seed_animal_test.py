@@ -39,6 +39,7 @@ def seed_animal_test():
             description="MBTI보다 정확한 동물 성격 분석! 당신의 영혼을 닮은 소울 애니멀을 찾아드립니다 ✨",
             category="personality",
             play_count=52340,
+            like_count=4210,
         )
         db.add(test)
         db.flush()

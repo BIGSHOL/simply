@@ -29,6 +29,7 @@ export interface TestSummary {
   category: 'personality' | 'love' | 'career' | 'fun';
   question_count: number;
   play_count: number;
+  like_count: number;
 }
 
 export interface Question {

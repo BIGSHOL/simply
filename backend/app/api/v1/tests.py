@@ -41,6 +41,7 @@ def get_tests(
                 category=test.category,
                 question_count=test.question_count,
                 play_count=test.play_count,
+                like_count=test.like_count,
             )
             for test in tests
         ]
@@ -65,6 +66,25 @@ def get_test_detail(
         )
 
     return TestDetailApiResponse(data=TestDetailResponse.model_validate(test))
+
+
+@router.post("/{test_id}/like")
+def like_test(
+    test_id: UUID,
+    db: Session = Depends(get_db),
+):
+    """테스트 좋아요"""
+    test = test_service.get_test_by_id(db, test_id)
+    if not test:
+        raise HTTPException(
+            status_code=404,
+            detail={
+                "code": "TEST_NOT_FOUND",
+                "message": "테스트를 찾을 수 없습니다",
+            },
+        )
+    test_service.increment_like_count(db, test_id)
+    return {"data": {"like_count": test.like_count}}
 
 
 @router.post("/{test_id}/submit", response_model=SubmitTestResponse)

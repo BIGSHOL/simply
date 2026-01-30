@@ -39,6 +39,7 @@ def seed_insect_test():
             description="작지만 강한 32가지 곤충 중 당신과 가장 닮은 곤충은? 의외의 결과에 소름 주의 😱",
             category="personality",
             play_count=48920,
+            like_count=3890,
         )
         db.add(test)
         db.flush()

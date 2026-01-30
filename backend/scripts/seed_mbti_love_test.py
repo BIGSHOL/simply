@@ -38,6 +38,7 @@ def seed_mbti_love_test():
             description="숨기고 싶었던 연애 흑역사까지 맞춰버리는 소름 테스트! 16가지 연애 유형과 찰떡 궁합까지 ✨",
             category="love",
             play_count=152340,
+            like_count=12450,
         )
         db.add(test)
         db.flush()

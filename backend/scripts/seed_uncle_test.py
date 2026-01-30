@@ -43,7 +43,8 @@ def seed_uncle_test():
             description="요즘 애들 뭐 좋아하는지 모른다고요? 괜찮아요, 저도 몰라요~ 15개 질문으로 당신의 숨겨진 아재력을 측정해드립니다! 날씨가 좋으니까... 날'아'가고 싶'씨'? ㅋㅋ",
             category="fun",
             thumbnail_url="/images/tests/uncle-power.png",
-            play_count=0,
+            play_count=31200,
+            like_count=2750,
         )
         db.add(test)
 

@@ -33,7 +33,10 @@ class Test(Base):
     description: Mapped[str] = mapped_column(Text, nullable=False)
     thumbnail_url: Mapped[str | None] = mapped_column(String(500), nullable=True)
     category: Mapped[str] = mapped_column(String(20), nullable=False)
-    play_count: Mapped[int] = mapped_column(Integer, default=0)
+    play_count: Mapped[int] = mapped_column(Integer, default=0)  # 표시용 (가상 + 실제)
+    real_play_count: Mapped[int] = mapped_column(Integer, default=0)  # 실제 참여 수
+    like_count: Mapped[int] = mapped_column(Integer, default=0)  # 표시용 (가상 + 실제)
+    real_like_count: Mapped[int] = mapped_column(Integer, default=0)  # 실제 좋아요 수
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     updated_at: Mapped[datetime] = mapped_column(

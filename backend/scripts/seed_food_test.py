@@ -39,6 +39,7 @@ def seed_food_test():
             description="친구들이 몰래 부르는 당신의 음식 별명은? 피자부터 마라탕까지 16가지 결과 대공개!",
             category="personality",
             play_count=38470,
+            like_count=3120,
         )
         db.add(test)
         db.flush()
