@@ -1,10 +1,11 @@
 """
-AI 서비스 - OpenAI API 연동
+AI 서비스 - Google Gemini API 연동
 
 Phase 2, T2.3: AI 결과 생성 API
 """
 import json
-from openai import OpenAI
+from google import genai
+from google.genai import types
 from app.core.config import settings
 
 
@@ -14,7 +15,7 @@ def generate_result(
     questions_with_answers: list[dict],
 ) -> dict:
     """
-    OpenAI API를 사용하여 심리 테스트 결과 생성
+    Google Gemini API를 사용하여 심리 테스트 결과 생성
 
     Args:
         test_title: 테스트 제목
@@ -28,22 +29,14 @@ def generate_result(
             "result_content": "상세 결과 설명"
         }
     """
-    if not settings.openai_api_key:
-        # API 키가 없으면 Mock 결과 반환
+    if not settings.gemini_api_key:
         return _generate_mock_result(test_title)
 
-    client = OpenAI(api_key=settings.openai_api_key)
+    client = genai.Client(api_key=settings.gemini_api_key)
 
-    # 프롬프트 구성
     prompt = _build_prompt(test_title, test_description, questions_with_answers)
 
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[
-                {
-                    "role": "system",
-                    "content": """당신은 심리 테스트 결과를 분석하는 전문가입니다.
+    system_instruction = """당신은 심리 테스트 결과를 분석하는 전문가입니다.
 사용자의 답변을 분석하여 재미있고 통찰력 있는 결과를 제공합니다.
 결과는 반드시 JSON 형식으로 반환하세요.
 
@@ -53,18 +46,20 @@ def generate_result(
     "result_title": "결과 타이틀 (흥미를 끄는 한 문장)",
     "result_content": "상세 결과 설명 (2-3단락, 장점/특징/조언 포함)"
 }"""
-                },
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ],
-            response_format={"type": "json_object"},
-            temperature=0.7,
-            max_tokens=1000,
+
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=system_instruction,
+                response_mime_type="application/json",
+                temperature=0.7,
+                max_output_tokens=1000,
+            ),
         )
 
-        result = json.loads(response.choices[0].message.content)
+        result = json.loads(response.text)
         return {
             "result_type": result.get("result_type", "분석 완료"),
             "result_title": result.get("result_title", "당신의 결과가 나왔어요!"),
@@ -72,7 +67,7 @@ def generate_result(
         }
 
     except Exception as e:
-        print(f"OpenAI API error: {e}")
+        print(f"Gemini API error: {e}")
         return _generate_mock_result(test_title)
 
 
@@ -82,11 +77,9 @@ def _build_prompt(
     questions_with_answers: list[dict],
 ) -> str:
     """프롬프트 구성"""
-    # 연애 유형 테스트 전용 프롬프트
     if "연애 유형" in test_title or "나의 연애 유형은" in test_title:
         return _build_love_test_prompt(questions_with_answers)
 
-    # 일반 테스트 프롬프트
     qa_text = "\n".join([
         f"Q{i+1}. {qa['question']}\n→ 선택: {qa['selected_choice']}"
         for i, qa in enumerate(questions_with_answers)

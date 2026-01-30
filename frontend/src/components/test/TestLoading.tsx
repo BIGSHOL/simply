@@ -161,22 +161,188 @@ export const TEST_LOADING_THEMES: Record<string, LoadingTheme> = {
     gradient: { from: '#FDF4FF', to: '#FAE8FF' },
     accent: '#D946EF',
   },
+  // --- 신규 테스트 ---
+  // [personality] 색깔 성격 테스트
+  'color-personality': {
+    emojis: ['🔴', '🟠', '🟡', '🟢', '🔵', '🟣', '⚪', '⚫'],
+    messages: [
+      '당신의 색깔 DNA를 분석 중...',
+      '컬러 전문가가 팔레트를 조합하고 있어요 🎨',
+      '무지개 스펙트럼 스캔 중...',
+      '당신만의 컬러를 찾는 중...',
+    ],
+    title: '당신의 색깔을\n찾고 있어요...',
+    gradient: { from: '#FDF2F8', to: '#EDE9FE' },
+    accent: '#A855F7',
+  },
+  // [love] 전생 러브스토리 테스트
+  'past-life-love': {
+    emojis: ['🏰', '⚔️', '👑', '📜', '🕯️', '💍', '🌹', '🗝️'],
+    messages: [
+      '전생의 기억을 불러오는 중...',
+      '타임머신이 과거로 이동 중 ⏳',
+      '전생의 인연을 추적하고 있어요...',
+      '당신의 전생 러브스토리를 발굴 중...',
+    ],
+    title: '전생의 러브스토리를\n되살리고 있어요...',
+    gradient: { from: '#FEF3C7', to: '#F5E6D3' },
+    accent: '#B45309',
+  },
+  // [love] 이별 회복 유형 테스트
+  'breakup-recovery': {
+    emojis: ['💔', '🩹', '🌱', '☀️', '💪', '🎵', '📖', '✈️'],
+    messages: [
+      '당신의 회복 패턴을 분석 중...',
+      '마음의 상처 치유 경로를 탐색 중 🩹',
+      '회복 탄력성 지수를 측정하고 있어요...',
+      '더 강해진 당신을 찾는 중...',
+    ],
+    title: '이별 후 당신의 회복법을\n분석하고 있어요...',
+    gradient: { from: '#F0F9FF', to: '#E0F2FE' },
+    accent: '#0EA5E9',
+  },
+  // [career] 퇴사 후 부캐 테스트
+  'side-hustle': {
+    emojis: ['🚀', '💰', '🎬', '☕', '💻', '📸', '🎸', '✍️'],
+    messages: [
+      '당신의 숨겨진 재능을 스캔 중...',
+      '부캐 적성 데이터베이스 검색 중 🔍',
+      '퇴사 시뮬레이션 돌리는 중...',
+      '당신의 제2의 인생을 설계 중...',
+    ],
+    title: '퇴사 후 당신의 부캐를\n찾고 있어요...',
+    gradient: { from: '#FFFBEB', to: '#FEF3C7' },
+    accent: '#F59E0B',
+  },
+  // [career] 회의실 생존 유형 테스트
+  'meeting-survival': {
+    emojis: ['🗣️', '📊', '😴', '✋', '📝', '🤔', '👏', '🙄'],
+    messages: [
+      '당신의 회의 패턴을 분석 중...',
+      '지난 회의록을 검토하고 있어요 📋',
+      '회의실 CCTV 분석 중...',
+      '당신의 회의 생존법을 찾는 중...',
+    ],
+    title: '회의실에서 당신은\n어떤 유형일까요...',
+    gradient: { from: '#F8FAFC', to: '#E2E8F0' },
+    accent: '#475569',
+  },
+  // [fun] 좀비 아포칼립스 생존 유형
+  'zombie-survival': {
+    emojis: ['🧟', '🔫', '🏥', '🔥', '🚗', '🪓', '🧬', '💀'],
+    messages: [
+      '좀비 바이러스 시뮬레이션 중...',
+      '생존 적성을 테스트하고 있어요 🧟',
+      '최적의 은신처를 탐색 중...',
+      '당신의 생존 확률을 계산하는 중...',
+    ],
+    title: '좀비 세계에서 당신의\n역할을 찾고 있어요...',
+    gradient: { from: '#1A1A2E', to: '#16213E' },
+    accent: '#E74C3C',
+  },
+  // [fun] 무인도 생존 유형
+  'island-survival': {
+    emojis: ['🏝️', '🌊', '🔥', '🥥', '🐚', '⛺', '🎣', '🌴'],
+    messages: [
+      '무인도 생존 시뮬레이션 가동 중...',
+      '당신의 야생 본능을 깨우는 중 🌊',
+      '생존 장비를 체크하고 있어요...',
+      '무인도에서 당신의 역할을 찾는 중...',
+    ],
+    title: '무인도에서 당신은\n어떤 생존자일까요...',
+    gradient: { from: '#ECFDF5', to: '#CFFAFE' },
+    accent: '#0D9488',
+  },
+  // [love] 플러팅 스타일 테스트
+  'flirting-style': {
+    emojis: ['😏', '💌', '👀', '🫣', '😘', '🤭', '💋', '🦋'],
+    messages: [
+      '당신의 플러팅 DNA를 분석 중...',
+      '호감 신호 패턴을 해독하고 있어요 👀',
+      '연애 고수들의 데이터와 비교 중...',
+      '당신만의 플러팅 기술을 찾는 중...',
+    ],
+    title: '당신의 플러팅 스타일을\n분석하고 있어요...',
+    gradient: { from: '#FFF1F2', to: '#FFE4E6' },
+    accent: '#F43F5E',
+  },
+  // [personality] 뇌 유형 테스트
+  'brain-type': {
+    emojis: ['🧠', '💡', '⚡', '🔬', '🎨', '📐', '💭', '🧩'],
+    messages: [
+      '당신의 뇌 회로를 스캔 중...',
+      '좌뇌와 우뇌의 밸런스를 측정 중 🧠',
+      '시냅스 연결 패턴을 분석하고 있어요...',
+      '당신의 뇌 유형을 찾는 중...',
+    ],
+    title: '당신의 뇌 유형을\n분석하고 있어요...',
+    gradient: { from: '#EFF6FF', to: '#E0E7FF' },
+    accent: '#6366F1',
+  },
+  // [career] 월급 사용 유형 테스트
+  'salary-spending': {
+    emojis: ['💸', '💰', '🛍️', '📊', '💳', '🏦', '🎰', '✈️'],
+    messages: [
+      '당신의 소비 DNA를 분석 중...',
+      '통장 잔고 시뮬레이션 돌리는 중 💸',
+      '월급날부터 다음 월급날까지 추적 중...',
+      '당신의 소비 유형을 찾는 중...',
+    ],
+    title: '당신의 월급 사용법을\n분석하고 있어요...',
+    gradient: { from: '#ECFDF5', to: '#D1FAE5' },
+    accent: '#059669',
+  },
+  // [fun] 조선시대 환생 신분 테스트
+  'joseon-rebirth': {
+    emojis: ['👘', '📜', '🏯', '🎎', '⚔️', '🍶', '🖌️', '👑'],
+    messages: [
+      '조선왕조실록을 검색 중...',
+      '전생의 호적을 확인하고 있어요 📜',
+      '사주팔자를 분석하는 중...',
+      '조선시대 당신의 신분을 찾는 중...',
+    ],
+    title: '조선시대 당신의 신분을\n찾고 있어요...',
+    gradient: { from: '#FFFBEB', to: '#FEF9C3' },
+    accent: '#92400E',
+  },
 };
 
 // 타이틀 키워드 → 테마 ID 매핑 (testId가 없을 때 타이틀로 매칭)
 const TITLE_KEYWORD_MAP: Record<string, string> = {
+  // personality
   '음식': 'food-personality',
-  '연애 유형': 'love-type',
-  '연애 스타일': 'mbti-love-type',
-  '직장인': 'career-type',
-  '직장 계급': 'rank-type',
-  '회사': 'workplace-type',
   '곤충': 'insect-type',
   '동물': 'animal-type',
   '야생': 'animal-type',
-  'MBTI': 'mbti-type',
+  '색깔': 'color-personality',
+  '컬러': 'color-personality',
+  // love
+  '연애 유형': 'love-type',
+  '연애 스타일': 'mbti-love-type',
+  '전생': 'past-life-love',
+  '러브스토리': 'past-life-love',
+  '이별': 'breakup-recovery',
+  '회복': 'breakup-recovery',
+  // career
+  '직장인': 'career-type',
+  '직장 계급': 'rank-type',
+  '계급': 'rank-type',
+  '회사': 'workplace-type',
+  '캐릭터': 'workplace-type',
+  '퇴사': 'side-hustle',
+  '부캐': 'side-hustle',
+  '회의': 'meeting-survival',
+  // fun
   '아재': 'ajae-type',
   '운세': 'fortune-type',
+  '좀비': 'zombie-survival',
+  '무인도': 'island-survival',
+  '생존': 'island-survival',
+  '조선': 'joseon-rebirth',
+  '환생': 'joseon-rebirth',
+  // general
+  'MBTI': 'mbti-type',
+  '내면': 'mbti-type',
 };
 
 /**

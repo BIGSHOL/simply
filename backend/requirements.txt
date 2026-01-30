@@ -12,8 +12,8 @@ asyncpg>=0.29.0
 # Redis
 redis>=5.0.0
 
-# OpenAI
-openai>=1.10.0
+# Google Gemini
+google-genai>=1.0.0
 
 # Utilities
 python-dotenv>=1.0.0

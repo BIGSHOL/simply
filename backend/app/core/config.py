@@ -14,12 +14,15 @@ class Settings(BaseSettings):
     # Redis
     redis_url: str = "redis://localhost:6379"
 
-    # OpenAI
-    openai_api_key: str = ""
+    # Google Gemini
+    gemini_api_key: str = ""
 
     # Application
     debug: bool = True
     secret_key: str = "your-secret-key-change-in-production"
+
+    # CORS
+    cors_origins: str = "http://localhost:3000"
 
     model_config = SettingsConfigDict(
         env_file=".env",
