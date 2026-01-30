@@ -48,3 +48,18 @@ export async function likeTest(id: string): Promise<{ data: { like_count: number
 export async function getResult(id: string): Promise<ApiResponse<Result>> {
   return fetchApi(`/results/${id}`);
 }
+
+// 관리자 통계 조회
+export interface AdminTestStat {
+  id: string;
+  title: string;
+  category: string;
+  play_count_display: number;
+  real_play_count: number;
+  like_count_display: number;
+  real_like_count: number;
+}
+
+export async function getAdminStats(key: string): Promise<{ data: AdminTestStat[] }> {
+  return fetchApi(`/admin/stats?key=${encodeURIComponent(key)}`);
+}
