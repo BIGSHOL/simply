@@ -18,17 +18,8 @@ if sys.platform == "win32":
 BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, BACKEND_DIR)
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from app.core.database import Base
+from app.core.database import Base, SessionLocal, engine
 from app.models import Test, Question, Choice, ResultType
-
-# 절대 경로로 DB 접근
-DB_PATH = os.path.join(BACKEND_DIR, "simly.db")
-DATABASE_URL = f"sqlite:///{DB_PATH}"
-
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
 def seed_uncle_test():

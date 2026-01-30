@@ -14,14 +14,8 @@ if sys.platform == "win32":
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from app.core.database import Base
+from app.core.database import Base, SessionLocal, engine
 from app.models import Test, Question, Choice, ResultType
-
-DATABASE_URL = "sqlite:///./simly.db"
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
 def seed_workplace_test():

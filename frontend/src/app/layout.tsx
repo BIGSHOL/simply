@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: 'Simly - AI 심리테스트',
   description: 'AI가 만들어주는 나만의 심리테스트 결과',
   keywords: ['심리테스트', 'AI', 'MBTI', '성격테스트', '연애테스트'],
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: 'Simly - AI 심리테스트',
     description: 'AI가 만들어주는 나만의 심리테스트 결과',
